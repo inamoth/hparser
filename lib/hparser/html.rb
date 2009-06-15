@@ -12,8 +12,8 @@ module HParser
   #  Hatena::Parser.parse('*foo').to_html # -> <h1>foo</h1>
   #  Hatena::Parser.parse('>|bar|<').to_html # -> <pre>bar</pre>
   #
-  # A class including this module shold implement 2 methods,+html_tag+ and 
-  # +html_content+. Obviously,+html_tag+ provid using html tag name. 
+  # A class including this module shold implement 2 methods,+html_tag+ and
+  # +html_content+. Obviously,+html_tag+ provid using html tag name.
   # +html_content+ is provid that content.
   # If content is +Arary+,each elements convert to html by
   # +to_html+. Otherwise,using as it self.
@@ -29,7 +29,7 @@ module HParser
   #      @inlines
   #    end
   #  end
-  # 
+  #
   module Html
     def to_html
       content = html_content
@@ -48,7 +48,7 @@ module HParser
         "h#{@@head_level + self.level - 1}"
       end
 
-      @@head_level = 1
+      @@head_level = 3
       def self.head_level=(l)
         @@head_level = l
       end
@@ -111,8 +111,8 @@ module HParser
         end
       end
 
-      def html_tag() 
-        'dl' 
+      def html_tag()
+        'dl'
       end
 
       def html_content
